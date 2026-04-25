@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - copilot/build-android-apk
   workflow_dispatch:
 
 jobs:
@@ -25,7 +26,7 @@ jobs:
       - name: Install Dependencies & Build Next.js
         working-directory: ./online-voting-system/frontend
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Setup Java
